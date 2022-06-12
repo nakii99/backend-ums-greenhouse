@@ -1,7 +1,10 @@
 import { DataTypes, Sequelize } from "sequelize";
+import dotenv from "dotenv";
 
-const database = new Sequelize('umsgreenhouse','greenhouse','greenhouse',{
-    host: 'localhost',
+dotenv.config();
+
+const database = new Sequelize(process.env.DATABASE as string,process.env.USERNAME as string, process.env.PASS as string,{
+    host: '127.0.0.1',
     dialect: 'mariadb'
 });
 
